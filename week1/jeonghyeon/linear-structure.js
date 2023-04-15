@@ -161,3 +161,102 @@ log("print", ll.print());
 
 ll.clear();
 log("print", ll.print());
+
+// 스택
+line("스택");
+let stack = [1, 2, 3, 4, 5];
+log("stack", stack);
+stack.push(7);
+log("push", stack);
+
+log("pop 실행", stack.pop());
+log("pop 후", stack);
+stack.push(7);
+log("top", stack[stack.length - 1]);
+
+log("size", stack.length);
+
+// queue
+line("queue");
+
+// Queue 구현 해보기
+class Node2 {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+class Queue {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+  enqueue(data) {
+    let node = new Node2(data);
+    if (this.head === null) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.size++;
+  }
+  dequeue() {
+    let node = this.head.data;
+
+    this.head = this.head.next;
+    this.size--;
+    return node;
+  }
+  peek() {
+    return this.head.data;
+  }
+  print() {
+    let result = [];
+    let current = this.head;
+    while (current) {
+      result.push(current.data);
+      current = current.next;
+    }
+    return result;
+  }
+}
+
+let q = new Queue();
+
+q.enqueue(1);
+q.enqueue(20);
+q.enqueue(30);
+q.enqueue(40);
+q.enqueue(15);
+
+log("queue", q.print());
+
+log("dequeue", q.dequeue());
+q.enqueue(1500);
+log("queue", q.print());
+
+log("peek", q.peek());
+
+// Set
+line("set");
+let set = new Set();
+set.add(1);
+set.add(2);
+set.add(5);
+set.add(5);
+set.add(1);
+log("set", set);
+// Map
+line("map");
+let map = new Map();
+map.set("1", "일");
+map.set("2", "이");
+map.set("3", "삼");
+map.set("4", "사");
+log("map", map);
+
+map.delete("1");
+log("map", map);
