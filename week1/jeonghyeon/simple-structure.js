@@ -1,6 +1,6 @@
 const log = (tag, value) => console.log(tag, value);
 
-const line = (title) => log(title, " : ---------------------");
+const line = (title) => log(title, " ---------------------------------");
 
 // 정수
 line("정수");
@@ -72,3 +72,5 @@ boolLog("문자열 값 있을 떄", "abc");
 boolLog("문자열 값 없을 떄", "");
 boolLog("undefined", undefined);
 boolLog("null", null);
+boolLog("배열 값들 있을 떄", [1, 2, 3, 4]);
+boolLog("배열 값들 없을 떄", []); // 빈 배열도 true로 떨어짐
