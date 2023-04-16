@@ -74,5 +74,3 @@ boolLog("undefined", undefined);
 boolLog("null", null);
 boolLog("배열 값들 있을 떄", [1, 2, 3, 4]);
 boolLog("배열 값들 없을 떄", []); // 빈 배열도 true로 떨어짐
-
-["1"].length && log("aaa");
