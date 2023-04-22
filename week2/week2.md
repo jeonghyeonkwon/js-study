@@ -4,4 +4,6 @@
 
 ## 권정현
 
+- [스터디 - 내용](https://github.com/jeonghyeonkwon/js-study/blob/main/week2/jeonghyeon/study.md)
+
 ## 홍윤근

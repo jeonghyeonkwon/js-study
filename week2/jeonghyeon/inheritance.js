@@ -59,4 +59,6 @@ class Shoes extends Item {
 let shoes = new Shoes("옷", "신발", 10);
 log("---> ", shoes.explanation());
 log("---> ", shoes.run());
+log("shose 는 Item을 상속 받았나?", shoes instanceof Item);
+log("shose 는 Sword을 상속 받았나?", shoes instanceof Sword);
 // log("---> ", shoes.attack());

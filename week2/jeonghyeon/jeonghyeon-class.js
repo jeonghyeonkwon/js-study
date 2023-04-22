@@ -143,4 +143,33 @@ log("sum1 : ", c2.sum(1, 2, 3, 4, 5));
 log("sum2 : ", c2.sum(12, 3, 4));
 
 line("프로퍼티들 호출");
+
 log(Object.getOwnPropertyNames(M.prototype));
+
+line("static");
+class StaticC {
+  static number = 10;
+  static message = "정적 메시지 입니다";
+
+  static fnMessage() {
+    return `${this.message} ----> number ${this.number}`;
+  }
+  constructor(type, name, value) {
+    this.type = type;
+    this.name = name;
+    this.value = value;
+  }
+  fnGet() {
+    return `${this.message}`;
+  }
+}
+
+let st = new StaticC("타입", "변수", 55);
+
+log("type : ", st.type);
+log("name : ", st.name);
+log("number : ", st.number);
+// log("fnMessage", st.fnMessage()); 에러 발생
+log("fnGet()", st.fnGet());
+log("static number", StaticC.number);
+log("static fnMessage()", StaticC.fnMessage());
