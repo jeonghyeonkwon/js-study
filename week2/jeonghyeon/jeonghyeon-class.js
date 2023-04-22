@@ -52,7 +52,7 @@ let j2 = new M2("정현", 32);
 log("age : ", j2.getAge());
 
 line("getter setter");
-
+//getter, setter
 class M3 {
   constructor(name, age) {
     this.name = name;
@@ -91,7 +91,56 @@ log("age : ", j3.age);
 // j3.name = ""; 에러 호출
 // j3.age = 0; 에러 호출
 
-// private
-//getter, setter
+line("오버로딩");
+
+class C {
+  constructor(c1, c2, c3) {
+    this.c1 = c1;
+    this.c2 = c2;
+    this.c3 = c3;
+  }
+
+  change(c1, c2) {
+    this.c1 = c1;
+    this.c2 = c2;
+  }
+  change(c1, c2, c3) {
+    this.c1 = c1;
+    this.c2 = c2;
+    this.c3 = c3;
+  }
+}
+
+let c = new C(1, 2, 3);
+log("c1 : ", c.c1);
+log("c2 : ", c.c2);
+log("c3 : ", c.c3);
+
+c.change(4, 5);
+log("c1 : ", c.c1);
+log("c2 : ", c.c2);
+log("c3 : ", c.c3); // undefined 자바스크립트는 오버로딩 기능 없음...
+
+c.change(6, 7, 8);
+log("c1 : ", c.c1);
+log("c2 : ", c.c2);
+log("c3 : ", c.c3);
+
+// 사용할려면 이런식으로
+line("자바스크립트 내의 오버로딩");
+class C2 {
+  constructor() {}
+  sum() {
+    let total = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      total += arguments[i];
+    }
+    return total;
+  }
+}
+let c2 = new C2();
+log("sum1 : ", c2.sum(1, 2, 3, 4, 5));
+log("sum2 : ", c2.sum(12, 3, 4));
+
 line("프로퍼티들 호출");
 log(Object.getOwnPropertyNames(M.prototype));
