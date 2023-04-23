@@ -61,3 +61,4 @@ ob1.chirdrenOb.value = 77;
 
 log("ob1", ob1);
 log("deepObj", deepObj);
+//이 외에도 방법이 있음

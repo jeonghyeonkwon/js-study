@@ -15,3 +15,5 @@
 - [상속](https://github.com/jeonghyeonkwon/js-study/blob/main/week2/jeonghyeon/inheritance.js)
 
 ## object
+
+- [클래스 복사 관련](https://github.com/jeonghyeonkwon/js-study/blob/main/week2/jeonghyeon/object.js)

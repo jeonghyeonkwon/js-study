@@ -19,6 +19,7 @@ class M {
 }
 
 let j = new M("권정현", 31);
+console.log(j);
 
 log("이름 : ", j.name);
 log("나이 : ", j.age);
@@ -173,3 +174,28 @@ log("number : ", st.number);
 log("fnGet()", st.fnGet());
 log("static number", StaticC.number);
 log("static fnMessage()", StaticC.fnMessage());
+
+line("generator 사용");
+//제네레이터 사용
+
+class Gen {
+  *[Symbol.iterator]() {
+    yield this.getMessage();
+    yield this.getMessage2();
+    yield this.getMessage3();
+  }
+
+  getMessage() {
+    return "msg1";
+  }
+  getMessage2() {
+    return "msg2";
+  }
+  getMessage3() {
+    return "msg3";
+  }
+}
+
+for (let i of new Gen()) {
+  log("msg", i);
+}
